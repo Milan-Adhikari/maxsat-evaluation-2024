@@ -1,0 +1,2 @@
+#!/bin/bash
+./wmaxcdcl_static $1

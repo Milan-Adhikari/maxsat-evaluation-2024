@@ -1,0 +1,13 @@
+#!/bin/bash
+wl=3600
+mem=51200
+
+echo "c [MSE2024] -- begin -- [MSE2024]"
+./run --timestamp -d 10 -o output.out -v output.var -w output.wat -C $wl -W $wl -M $mem ./cashwmaxsat-disjcad -v0 -no-bin -no-sat -m -bm -no-par -scip-cpu=600 $1
+cat output.out
+cat output.var
+rm -f maxsat.wcnf
+rm -f output.out
+rm -f output.var
+rm -f output.wat
+echo "c [MSE2024] -- end -- [MSE2024]"

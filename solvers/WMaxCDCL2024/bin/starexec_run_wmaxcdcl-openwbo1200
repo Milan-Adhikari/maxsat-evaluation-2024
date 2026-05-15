@@ -1,0 +1,2 @@
+#!/bin/bash
+./wmaxcdcl-openwbo $1 1200

@@ -1,0 +1,3 @@
+#!/bin/bash
+./EvalMaxSAT --noSaveCores $1
+

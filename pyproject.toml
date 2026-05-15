@@ -1,0 +1,17 @@
+[project]
+name = "maxsat-evaluation-2024-runner"
+version = "0.1.0"
+authors = [
+    { name = "Your Name", email = "your.email@university.edu" }
+]
+description = "Local and Slurm execution scripts for running and benchmarking MaxSAT Evaluation 2024 weighted solvers."
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+    "matplotlib>=3.7"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

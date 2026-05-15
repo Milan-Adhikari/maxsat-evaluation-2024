@@ -1,0 +1,31 @@
+#!/bin/bash
+FNAME=$1
+TOPENWBO=$2
+
+printf "c " 1>&2
+(timeout $TOPENWBO ./open-wbo $FNAME > outWBO.txt) 2> /dev/null
+CODE=$?
+echo "c " 1>&2
+if [ $CODE -ge 100 ]; then
+	echo "c Stop OpenWBO"
+	UB=`grep "^o" outWBO.txt | tail -n 1 | cut -d ' ' -f 2`
+	rm outWBO.txt
+	if ! [ -z "$UB" ]; then
+		UB=$((UB+1))
+		echo "c UB from OpenWBO=$UB"
+	else
+		echo "c no UB from OpenWBO"
+	fi
+	./wmaxcdcl_static $FNAME $UB
+	exit $?
+else
+	SOL=$(grep "^s" outWBO.txt | cut -d ' ' -f 2)
+        cat outWBO.txt
+        rm outWBO.txt
+        echo "c Solved by OpenWBO"
+        if [ "$SOL" == "UNSATISFIABLE" ]; then
+                exit 20
+        else
+                exit 30
+        fi  
+fi

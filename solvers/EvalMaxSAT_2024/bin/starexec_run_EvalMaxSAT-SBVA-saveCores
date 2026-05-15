@@ -1,0 +1,3 @@
+#!/bin/bash
+./EvalMaxSAT $1
+

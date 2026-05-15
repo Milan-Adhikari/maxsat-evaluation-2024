@@ -1,0 +1,1 @@
+It is a MaxSAT solver based on CASHWMaxSat and UWrMaxSat. 
