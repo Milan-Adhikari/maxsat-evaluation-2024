@@ -33,7 +33,8 @@ Update `#SBATCH --array=0-2283%50` in `submit_eval.sbatch` to match your exact $
 
 ```bash
 # important: do not forget to update `#SBATCH --array=0-2283%50`
-sbatch submit_eval.sbatch
+# we need to supply TIMESTAMP from the command line, so that all the jobs get the exact same TIMESTAMP
+sbatch --export=ALL,RUN_TIMESTAMP=$(date +%Y%m%d_%H%M%S) submit_eval.sbatch
 ```
 
 ### 5. Generate Analysis Plots

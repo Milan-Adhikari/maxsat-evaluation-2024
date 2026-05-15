@@ -25,13 +25,6 @@ export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 # create a folder for standard Slurm out/err reports
 mkdir -p logs
 
-
-# establish a single execution timestamp for this global batch run
-# this ensures every distinct array node writes into the exact same folder name
-if [[ -z "${RUN_TIMESTAMP:-}" ]]; then
-    export RUN_TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-fi
-
 echo "[$(date)] Slurm Master Job Matrix Initialized: ID=$SLURM_JOB_ID | Array_ID=$SLURM_ARRAY_TASK_ID"
 echo "Targeting global output folder context: eval_${RUN_TIMESTAMP}"
 
