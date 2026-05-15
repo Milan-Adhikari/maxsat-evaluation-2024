@@ -9,7 +9,7 @@
 # CRITICAL SETTING: 
 # Set the array boundary size to match exactly: (Total Solvers * Total Benchmarks) - 1
 # e.g., if you have 2 solvers and 250 benchmarks, total tasks = 500, use: --array=0-499%50
-#SBATCH --array=0-0%10
+#SBATCH --array=0-19%20
 
 # load the module
 module add python/3.12-conda

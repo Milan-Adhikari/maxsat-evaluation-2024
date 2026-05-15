@@ -1,0 +1,12 @@
+solver,benchmark,status,runtime_seconds,code
+CASHWMaxSAT-DisjCad-S6,planning_wt-bwt3cc.wcsp.wcnf.xz,OPTIMUM,0.268,0
+CASHWMaxSAT-DisjCom-S9,warehouses_wt-warehouse0.wcsp.wcnf.xz,OPTIMUM,0.279,0
+CASHWMaxSAT-DisjCad-S6,spot5_wt-29.wcsp.dir.wcnf.xz,OPTIMUM,0.378,0
+CASHWMaxSAT-DisjCom-S9,spot5_wt-29.wcsp.dir.wcnf.xz,OPTIMUM,0.678,0
+CASHWMaxSAT-DisjCad-S6,protein_ins_wt-1vii_.1cph_.g.wcnf.t.wcnf.xz,OPTIMUM,1.169,0
+CASHWMaxSAT-DisjCom-S9,protein_ins_wt-1vii_.1cph_.g.wcnf.t.wcnf.xz,OPTIMUM,1.181,0
+CASHWMaxSAT-DisjCad-S6,warehouses_wt-warehouse0.wcsp.wcnf.xz,OPTIMUM,0.378,0
+CASHWMaxSAT-DisjCom-S9,max-realizability_wt-power-distribution_2_2.wcnf.xz,OPTIMUM,1.185,0
+CASHWMaxSAT-DisjCom-S9,planning_wt-bwt3cc.wcsp.wcnf.xz,OPTIMUM,0.378,0
+CASHWMaxSAT-DisjCad-S6,max-realizability_wt-power-distribution_2_2.wcnf.xz,OPTIMUM,5.066,0
+EvalMaxSAT_2024,max-realizability_wt-power-distribution_2_2.wcnf.xz,OPTIMUM,11.54,30
