@@ -1,6 +1,6 @@
 ================================================================================
 [BENCHMARK] max-realizability_wt-power-distribution_2_2.wcnf.xz
-[STATUS] OPTIMUM | [RUNTIME] 0.013s | [EXIT CODE] 30
+[STATUS] OPTIMUM | [RUNTIME] 0.015s | [EXIT CODE] 30
 ================================================================================
 c
 c Open-WBO:	 a Modular MaxSAT Solver -- based on mergesat (core version)
@@ -40,7 +40,7 @@ c c
 
 ================================================================================
 [BENCHMARK] planning_wt-bwt3cc.wcsp.wcnf.xz
-[STATUS] OPTIMUM | [RUNTIME] 0.008s | [EXIT CODE] 30
+[STATUS] OPTIMUM | [RUNTIME] 0.007s | [EXIT CODE] 30
 ================================================================================
 c
 c Open-WBO:	 a Modular MaxSAT Solver -- based on mergesat (core version)
@@ -77,7 +77,7 @@ c c
 
 ================================================================================
 [BENCHMARK] protein_ins_wt-1vii_.1cph_.g.wcnf.t.wcnf.xz
-[STATUS] OPTIMUM | [RUNTIME] 0.035s | [EXIT CODE] 30
+[STATUS] OPTIMUM | [RUNTIME] 0.032s | [EXIT CODE] 30
 ================================================================================
 c
 c Open-WBO:	 a Modular MaxSAT Solver -- based on mergesat (core version)
@@ -115,7 +115,7 @@ c c
 
 ================================================================================
 [BENCHMARK] spot5_wt-29.wcsp.dir.wcnf.xz
-[STATUS] OPTIMUM | [RUNTIME] 0.011s | [EXIT CODE] 30
+[STATUS] OPTIMUM | [RUNTIME] 0.01s | [EXIT CODE] 30
 ================================================================================
 c
 c Open-WBO:	 a Modular MaxSAT Solver -- based on mergesat (core version)
@@ -155,7 +155,7 @@ c c
 
 ================================================================================
 [BENCHMARK] warehouses_wt-warehouse0.wcsp.wcnf.xz
-[STATUS] OPTIMUM | [RUNTIME] 0.011s | [EXIT CODE] 30
+[STATUS] OPTIMUM | [RUNTIME] 0.009s | [EXIT CODE] 30
 ================================================================================
 c
 c Open-WBO:	 a Modular MaxSAT Solver -- based on mergesat (core version)

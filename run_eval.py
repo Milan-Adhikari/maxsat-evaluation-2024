@@ -19,6 +19,7 @@ import time
 from datetime import datetime
 import pandas as pd
 import lzma
+import re
 
 # conditionally import fcntl for linux/hpc systems to manage file locks
 try:
@@ -30,6 +31,22 @@ except ImportError:
 def load_config(config_path="config.yaml"):
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
+
+
+def parse_optimum_value(full_output):
+    """
+    Parses the output text to extract the final optimum value.
+    Looks for standard MaxSAT 'o ' lines, handling optional solver prefixes (like '0.00/0.00 o 177').
+    Returns the integer value of the last occurrence if found, otherwise None.
+    """
+    # matches 'o' followed by an optional space and digits at the end of a line or after spaces.
+    pattern = re.compile(r"(?:^|\s)o\s*(\d+)\s*$", re.MULTILINE)
+    matches = pattern.findall(full_output)
+
+    if matches:
+        # last 'o' line in the output represents the final optimized value
+        return int(matches[-1])
+    return None
 
 
 def append_row_atomic(row_data, file_path):
@@ -72,10 +89,10 @@ def append_row_atomic(row_data, file_path):
 def append_text_log_atomic(
     solver_name, benchmark_name, status, runtime, exit_code, raw_output, logs_dir
 ):
-    # build a distinct, easy-to-read text file for each solver
+    # build a distinct file for each solver
     log_file_path = Path(logs_dir) / f"{solver_name}.log"
 
-    # build a beautiful text header boundary for your eyes during debugging
+    # build a text header boundary for debugging
     header = (
         f"{'=' * 80}\n"
         f"[BENCHMARK] {benchmark_name}\n"
@@ -102,18 +119,20 @@ def run_single_instance(
     solver_abs = Path(solver_path).resolve()
     solver_dir = solver_abs.parent
 
+    # baseline configuration structure to ensure alignment in CSV under any condition
     result_template = {
         "solver": solver_name,
         "benchmark": benchmark_abs.name,
-        "status": "UNKNOWN",
+        "status": "FAILED",
         "runtime_seconds": 0.0,
         "code": -1,
+        "optimum_value": "",
     }
 
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir_path = Path(tmpdir)
         try:
-            # 1. link solver files as before
+            # 1. link solver files
             for file_path in solver_dir.iterdir():
                 if file_path.is_file():
                     (tmpdir_path / file_path.name).symlink_to(file_path)
@@ -151,31 +170,27 @@ def run_single_instance(
             )
             elapsed_time = time.perf_counter() - start_time
             exit_code = result.returncode
+            runtime_rounded = round(elapsed_time, 3)
 
             # parse standard maxsat execution statuses
             full_output = result.stdout + "\n" + result.stderr
 
-            # default fallbacks based on exit codes
-            if exit_code == 127:
-                status = "CRASH_127"
-            elif exit_code == 30:
-                status = "OPTIMUM"
-            elif exit_code == 20:
-                status = "UNSAT"
-            elif exit_code == 0:
-                status = "COMPLETE"
-            else:
-                status = f"UNKNOWN_CODE_{exit_code}"
+            optimum_val = ""
 
-            # override status if standard competition output headers are present
+            # strict binary evaluation
             if "s OPTIMUM FOUND" in full_output:
-                status = "OPTIMUM"
-            elif "s UNSATISFIABLE" in full_output:
-                status = "UNSAT"
-            elif "s SATISFIABLE" in full_output and status != "OPTIMUM":
-                status = "SATISFIABLE"
+                parsed_val = parse_optimum_value(full_output)
+                if parsed_val is not None:
+                    status = "OPTIMUM"
+                    optimum_val = parsed_val
+                else:
+                    status = "ERROR_PARSING_OPTIMUM"
+                    print(
+                        f"[PARSING ERROR] Solver {solver_name} found optimum, but regex extraction failed!"
+                    )
+            else:
+                status = "FAILED"
 
-            runtime_rounded = round(elapsed_time, 3)
             print(
                 f"[FINISHED] {solver_name} on {benchmark_abs.name} ({runtime_rounded}s, Code: {exit_code})"
             )
@@ -185,6 +200,7 @@ def run_single_instance(
                     "status": status,
                     "runtime_seconds": runtime_rounded,
                     "code": exit_code,
+                    "optimum_value": optimum_val,
                 }
             )
 
@@ -194,14 +210,19 @@ def run_single_instance(
                 status,
                 runtime_rounded,
                 exit_code,
-                result.stdout + "\n" + result.stderr,
+                full_output,
                 logs_dir,
             )
 
         except subprocess.TimeoutExpired:
             print(f"[TIMEOUT] {solver_name} on {benchmark_abs.name} (>{timeout}s)")
             result_template.update(
-                {"status": "TIMEOUT", "runtime_seconds": float(timeout)}
+                {
+                    "status": "TIMEOUT",
+                    "runtime_seconds": float(timeout),
+                    "code": -1,
+                    "optimum_value": "",
+                }
             )
             append_text_log_atomic(
                 solver_name,
@@ -215,7 +236,14 @@ def run_single_instance(
 
         except Exception as e:
             print(f"[ERROR] {solver_name} on {benchmark_abs.name}: {str(e)}")
-            result_template.update({"status": "ERROR"})
+            result_template.update(
+                {
+                    "status": "ERROR",
+                    "runtime_seconds": 0.0,
+                    "code": -1,
+                    "optimum_value": "",
+                }
+            )
             append_text_log_atomic(
                 solver_name,
                 benchmark_abs.name,
