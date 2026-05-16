@@ -1,0 +1,29 @@
+### Starting TaskPrologue of job 11655514 on w1501 at Sat May 16 12:19:01 CEST 2026
+#   SLURM_JOB_NODELIST=w1501
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=1
+#   SLURM_EXPORT_ENV=ALL,RUN_TIMESTAMP=20260516_121859
+Running on cores 2 with govenor powersave
+### Finished TaskPrologue
+=== JOB_STATISTICS ===
+=== current date     : Sat May 16 12:19:02 CEST 2026
+= Job-ID             : 11655514 on woody
+= Job-Name           : mse2024_eval
+= Job-Command        : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024/submit_eval.sbatch
+= Initial workdir    : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024
+= Queue/Partition    : work
+= Slurm account      : tunu with QOS=normal
+= Requested resources:  for 1-00:00:00
+= Elapsed runtime    : 00:00:02
+= Total RAM usage    : 0.0 GiB of requested  GiB (%)   
+= Node list          : w1501
+= Subm/Elig/Start/End: 2026-05-16T12:18:59 / 2026-05-16T12:18:59 / 2026-05-16T12:19:00 / 2026-05-16T12:19:02
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          2312.1M  1000.0G  1500.0G        N/A  40,812    5,000K   7,500K        N/A    
+    /home/hpc              38.3G   104.9G   209.7G        N/A  41,276      500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
