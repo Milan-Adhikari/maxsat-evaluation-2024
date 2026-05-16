@@ -20,10 +20,6 @@ set -euo pipefail
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 
-# >>> redirect stdout/stderr from this point forward
-exec > "${LOG_DIR}/maxsat_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.out"
-exec 2> "${LOG_DIR}/maxsat_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err"
-
 echo "[$(date)] Slurm Master Job Matrix Initialized: ID=$SLURM_JOB_ID | Array_ID=$SLURM_ARRAY_TASK_ID"
 echo "Targeting global output folder context: eval_${RUN_TIMESTAMP}"
 
