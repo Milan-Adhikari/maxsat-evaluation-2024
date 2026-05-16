@@ -1,0 +1,6 @@
+solver,benchmark,status,runtime_seconds,code,optimum_value
+WMaxCDCL2024,warehouses_wt-warehouse0.wcsp.wcnf.xz,OPTIMUM,0.076,30,328
+WMaxCDCL2024,spot5_wt-29.wcsp.dir.wcnf.xz,OPTIMUM,0.076,30,8059
+WMaxCDCL2024,protein_ins_wt-1vii_.1cph_.g.wcnf.t.wcnf.xz,OPTIMUM,0.082,30,165
+WMaxCDCL2024,planning_wt-bwt3cc.wcsp.wcnf.xz,OPTIMUM,0.046,30,177
+WMaxCDCL2024,max-realizability_wt-power-distribution_2_2.wcnf.xz,OPTIMUM,0.032,30,10
