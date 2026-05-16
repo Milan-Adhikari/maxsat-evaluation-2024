@@ -4,9 +4,6 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 #SBATCH --job-name=mse2024_eval
-# keep a master fallback log so Slurm is happy at startup
-#SBATCH --output=logs/slurm_master_%A_%a.out
-#SBATCH --error=logs/slurm_master_%A_%a.err
 # CRITICAL SETTING: 
 # Set the array boundary size to match exactly: (Total Solvers * Total Benchmarks) - 1
 # e.g., if you have 2 solvers and 250 benchmarks, total tasks = 500, use: --array=0-499%50
@@ -22,10 +19,6 @@ conda activate mse24env
 set -euo pipefail
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
-
-# create a folder for standard Slurm out/err reports
-LOG_DIR="logs/${RUN_TIMESTAMP}"
-mkdir -p "$LOG_DIR"
 
 # >>> redirect stdout/stderr from this point forward
 exec > "${LOG_DIR}/maxsat_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.out"

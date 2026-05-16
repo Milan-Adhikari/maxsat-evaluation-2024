@@ -29,12 +29,17 @@ python3 run_eval.py
 
 ### 4. Run on HPC Cluster (Slurm)
 
-Update `#SBATCH --array=0-2283%50` in `submit_eval.sbatch` to match your exact $(\text{Solvers} \times \text{Benchmarks}) - 1$ grid size. Then submit:
+> [!IMPORTANT]
+> **Update the Slurm Array Boundary**
+>
+> You **must** change the `#SBATCH --array=0-2283%50` line in `submit_eval.sbatch` to match your exact formula grid size:
+>
+> $$\text{Total Tasks} = (\text{Solvers} \times \text{Benchmarks}) - 1$$
+
+Then submit:
 
 ```bash
-# important: do not forget to update `#SBATCH --array=0-2283%50`
-# we need to supply TIMESTAMP from the command line, so that all the jobs get the exact same TIMESTAMP
-sbatch --export=ALL,RUN_TIMESTAMP=$(date +%Y%m%d_%H%M%S) submit_eval.sbatch
+bash submit.bash
 ```
 
 ### 5. Generate Analysis Plots
