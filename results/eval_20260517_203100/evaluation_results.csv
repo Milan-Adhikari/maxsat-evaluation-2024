@@ -1,0 +1,11 @@
+solver,benchmark,status,runtime_seconds,code,optimum_value
+WMaxCDCL2024,synplicate-TheoremProver-run2-ms_0_68_0.8658227848101265_erm.wcnf.xz,OPTIMUM,4.828,30,289
+WMaxCDCL2024,synplicate-TheoremProver-run3-ms_0_53_0.8771653543307086_erm.wcnf.xz,OPTIMUM,10.344,30,305
+WMaxCDCL2024,preference_planning_wt-WCNF_pathways_p10.wcnf.xz,OPTIMUM,11.625,30,129
+WMaxCDCL2024,causal-discovery_wt-causal_n5_i5_N10000_uai13_log_int.wcnf.xz,OPTIMUM,114.633,30,46030289
+WMaxCDCL2024,metro_wt-metro_8_8_5_20_10_6_500_1_9.lp.sm-extracted.wcnf.xz,OPTIMUM,241.731,30,105
+WMaxCDCL2024,metro_wt-metro_9_8_7_30_10_6_500_1_6.lp.sm-extracted.wcnf.xz,OPTIMUM,346.668,30,31
+WMaxCDCL2024,frb_wt-frb20-11-2.wcnf.xz,OPTIMUM,1200.837,30,200
+WMaxCDCL2024,af-synthesis_wt-af-synthesis_stb_50_160_5.wcnf.xz,OPTIMUM,1920.921,30,113
+WMaxCDCL2024,tcp_wt-tcp_students_98_it_11.wcnf.xz,OPTIMUM,5671.879,30,2694
+WMaxCDCL2024,synplicate_new-synplicate_synthetic_dag_run2_11_size_10_ms_26_50_0_erm.wcnf.xz,OPTIMUM,11684.457,30,400
