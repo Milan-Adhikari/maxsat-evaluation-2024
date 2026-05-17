@@ -7,14 +7,15 @@ result_dir: "./results"
 # absolute or relative paths to benchmark directories
 benchmark_dirs:
   # - "./benchmarks-mse24/single-test-instance"
-  #- "./benchmarks-mse24/sample-test-instances"
+  # - "./benchmarks-mse24/sample-test-instances"
   # - "./benchmarks-mse24/mse24-exact-weighted"
-  - "./benchmarks-mse24/random-50-benchmarks"
+  # - "./benchmarks-mse24/random-50-benchmarks"
+  - "./benchmarks-mse24/delete-later"
 
 # dictioanry of solvers to evaluate
 # format: ShortName: "path/to/starexec/run/script"
 solvers:
-  WMaxCDCL2024: "./solvers/WMaxCDCL2024/bin/wmaxcdcl-openwbo"
+  WMaxCDCL2024: "./solvers/WMaxCDCL2024/bin/starexec_run_wmaxcdcl-openwbo1200"
   # CASHWMaxSAT-DisjCad-S6: "./solvers/CASHWMaxSAT-DisjCad-S6/bin/starexec_run_default"
   # CASHWMaxSAT-DisjCom-S9: "./solvers/CASHWMaxSAT-DisjCom-S9/bin/starexec_run_default"
   # EvalMaxSAT_2024: "./solvers/EvalMaxSAT_2024/bin/starexec_run_EvalMaxSAT"

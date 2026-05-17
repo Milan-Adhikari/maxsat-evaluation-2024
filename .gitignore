@@ -220,3 +220,4 @@ __marimo__/
 # mse24 benchmark instances
 /benchmarks-mse24/mse24-exact-weighted
 /benchmarks-mse24/random-50-benchmarks
+/results/local_tests

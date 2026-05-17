@@ -155,7 +155,7 @@ def run_single_instance(
             local_solver_script = tmpdir_path / solver_abs.name
 
             # 3. hand the isolated uncompressed file path to the execution matrix
-            cmd = [str(local_solver_script), str(local_benchmark), str(timeout)]
+            cmd = [str(local_solver_script), str(local_benchmark)]
 
             print(f"[STARTING] {solver_name} on {benchmark_abs.name}")
 
