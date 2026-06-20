@@ -1,9 +1,9 @@
 # global evaluation settings
-timeout_seconds: 18000
+timeout_seconds: 7200
 max_workers: 4 # number of parallel instances for local running
 # result_dir: "./results"
 result_dir: "./results-satlib"
-# result_dir: "./results/local_tests"
+#result_dir: "./results/local_tests"
 
 # absolute or relative paths to benchmark directories
 benchmark_dirs:
@@ -11,7 +11,7 @@ benchmark_dirs:
   # - "./benchmarks-mse24/sample-test-instances"
   # - "./benchmarks-mse24/mse24-exact-weighted"
   # - "./benchmarks-mse24/random-50-benchmarks"
-  - "./benchmarks-satlib/sample-test-instances"
+ # - "./benchmarks-satlib/sample-test-instances"
   - "./benchmarks-satlib/uf250_1_1-compressed"
   - "./benchmarks-satlib/uf250_10_10-compressed"
   - "./benchmarks-satlib/uf250_25_25-compressed"

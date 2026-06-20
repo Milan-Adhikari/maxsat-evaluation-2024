@@ -1,0 +1,36 @@
+### Starting TaskPrologue of job 11954194 on w1443 at Sat Jun 20 12:38:37 CEST 2026
+#   SLURM_JOB_NODELIST=w1443
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=1
+#   SLURM_EXPORT_ENV=ALL,RUN_TIMESTAMP=20260620_123626
+Running on cores 3 with govenor powersave
+### Finished TaskPrologue
+[Sat Jun 20 12:38:38 CEST 2026] Slurm Master Job Matrix Initialized: ID=11954194 | Array_ID=63
+Targeting global output folder context: eval_20260620_123626
+[Slurm Node Task 63] Assigned to target directory: eval_20260620_123626
+[DECOMPRESSING] uf250-066.wcnf.xz into sandbox...
+[STARTING] WMaxCDCL2024 on uf250-066.wcnf.xz
+[FINISHED] WMaxCDCL2024 on uf250-066.wcnf.xz (1018.329s, Code: 30)
+[Sat Jun 20 12:55:37 CEST 2026] Slurm Node Array Instance 63 complete.
+=== JOB_STATISTICS ===
+=== current date     : Sat Jun 20 12:55:38 CEST 2026
+= Job-ID             : 11954194 on woody
+= Job-Name           : satlib_mse2024_eval
+= Job-Command        : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024/submit_eval.sbatch
+= Initial workdir    : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024
+= Queue/Partition    : work
+= Slurm account      : tunu with QOS=normal
+= Requested resources:  for 1-00:00:00
+= Elapsed runtime    : 00:17:06
+= Total RAM usage    : 0.4 GiB of requested  GiB (%)   
+= Node list          : w1443
+= Subm/Elig/Start/End: 2026-06-20T12:36:26 / 2026-06-20T12:36:26 / 2026-06-20T12:38:31 / 2026-06-20T12:55:37
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          2315.3M  1000.0G  1500.0G        N/A  40,862    5,000K   7,500K        N/A    
+    /home/hpc              48.6G   104.9G   209.7G        N/A      54K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    

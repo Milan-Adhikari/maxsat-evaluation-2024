@@ -122,6 +122,7 @@ def run_single_instance(
     # baseline configuration structure to ensure alignment in CSV under any condition
     result_template = {
         "solver": solver_name,
+	"benchmark_path": benchmark_path,
         "benchmark": benchmark_abs.name,
         "status": "FAILED",
         "runtime_seconds": 0.0,
