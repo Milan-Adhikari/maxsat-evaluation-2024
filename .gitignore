@@ -220,4 +220,15 @@ __marimo__/
 # mse24 benchmark instances
 /benchmarks-mse24/mse24-exact-weighted
 /benchmarks-mse24/random-50-benchmarks
+/benchmarks-mse24/delete-later
+/benchmarks-satlib/uf250_1_1/
+/benchmarks-satlib/uf250_10_10/
+/benchmarks-satlib/uf250_25_25/
+/benchmarks-satlib/uf250_100_100/
+/benchmarks-satlib/uf250_1_1-compressed/
+/benchmarks-satlib/uf250_10_10-compressed/
+/benchmarks-satlib/uf250_25_25-compressed/
+/benchmarks-satlib/uf250_100_100-compressed/
+
 /results/local_tests
+compress_wcnf_files.py
