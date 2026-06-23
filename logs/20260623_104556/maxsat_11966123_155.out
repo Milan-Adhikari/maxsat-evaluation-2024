@@ -1,0 +1,36 @@
+### Starting TaskPrologue of job 11966279 on w2510 at Tue Jun 23 10:47:04 CEST 2026
+#   SLURM_JOB_NODELIST=w2510
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=1
+#   SLURM_EXPORT_ENV=ALL,RUN_TIMESTAMP=20260623_104556
+Running on cores 31 with govenor powersave
+### Finished TaskPrologue
+[Tue Jun 23 10:47:05 CEST 2026] Slurm Master Job Matrix Initialized: ID=11966279 | Array_ID=155
+Targeting global output folder context: eval_20260623_104556
+[Slurm Node Task 155] Assigned to target directory: eval_20260623_104556
+[DECOMPRESSING] css-refactoring_wt-ebay.dimacs.wcnf.xz into sandbox...
+[STARTING] WMaxCDCL2024 on css-refactoring_wt-ebay.dimacs.wcnf.xz
+[FINISHED] WMaxCDCL2024 on css-refactoring_wt-ebay.dimacs.wcnf.xz (88.145s, Code: 30)
+[Tue Jun 23 10:48:34 CEST 2026] Slurm Node Array Instance 155 complete.
+=== JOB_STATISTICS ===
+=== current date     : Tue Jun 23 10:48:34 CEST 2026
+= Job-ID             : 11966279 on woody
+= Job-Name           : satlib_mse2024_eval
+= Job-Command        : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024/submit_eval.sbatch
+= Initial workdir    : /home/hpc/tunu/tunu104h/maxsat-evaluation-2024
+= Queue/Partition    : work
+= Slurm account      : tunu with QOS=normal
+= Requested resources:  for 1-00:00:00
+= Elapsed runtime    : 00:01:32
+= Total RAM usage    : 0.2 GiB of requested  GiB (%)   
+= Node list          : w2510
+= Subm/Elig/Start/End: 2026-06-23T10:45:56 / 2026-06-23T10:47:02 / 2026-06-23T10:47:02 / 2026-06-23T10:48:34
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          2529.2M  1000.0G  1500.0G        N/A  41,480    5,000K   7,500K        N/A    
+    /home/hpc              49.2G   104.9G   209.7G        N/A      70K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
