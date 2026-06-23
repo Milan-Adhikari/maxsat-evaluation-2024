@@ -180,7 +180,7 @@ WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-di
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-distribution_3_7.wcnf.xz,max-realizability_wt-power-distribution_3_7.wcnf.xz,OPTIMUM,0.839,30,1
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-distribution_3_8.wcnf.xz,max-realizability_wt-power-distribution_3_8.wcnf.xz,OPTIMUM,1.932,30,1
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/lisbon-wedding_wt-lisbon-wedding-10-17.wcnf.xz,lisbon-wedding_wt-lisbon-wedding-10-17.wcnf.xz,OPTIMUM,904.073,30,377
-30,6
+WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-distribution_4_4.wcnf.xz,max-realizability_wt-power-distribution_4_4.wcnf.xz,OPTIMUM,0.19,30,6
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-distribution_8_2.wcnf.xz,max-realizability_wt-power-distribution_8_2.wcnf.xz,OPTIMUM,0.101,30,40
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/max-realizability_wt-power-distribution_9_4.wcnf.xz,max-realizability_wt-power-distribution_9_4.wcnf.xz,OPTIMUM,0.181,30,18
 WMaxCDCL2024,benchmarks-mse24/mse24-exact-weighted/lisbon-wedding_wt-lisbon-wedding-5-17.wcnf.xz,lisbon-wedding_wt-lisbon-wedding-5-17.wcnf.xz,OPTIMUM,803.221,30,802

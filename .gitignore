@@ -221,6 +221,8 @@ __marimo__/
 /benchmarks-mse24/mse24-exact-weighted
 /benchmarks-mse24/random-50-benchmarks
 /benchmarks-mse24/delete-later
+
+/benchmarks-satlib/sample-test-instances-2/
 /benchmarks-satlib/uf250_1_1/
 /benchmarks-satlib/uf250_10_10/
 /benchmarks-satlib/uf250_25_25/
@@ -231,4 +233,11 @@ __marimo__/
 /benchmarks-satlib/uf250_100_100-compressed/
 
 /results/local_tests
+/results-satlib/parsed-results
+
 compress_wcnf_files.py
+create_results_for_paper.py
+
+check_missing_files.py
+
+/results/eval_20260623_104556/logs/
